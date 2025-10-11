@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="DebugAVX2|Win32">
@@ -942,6 +942,7 @@
     <ClCompile Include="src\Features\Simulation\ProjectileSimulation\ProjectileSimulation.cpp" />
     <ClCompile Include="src\Features\Spectate\Spectate.cpp" />
     <ClCompile Include="src\Features\Ticks\Ticks.cpp" />
+    <ClCompile Include="src\Features\Ticks\WarpPred\WarpPrediction.cpp" />
     <ClCompile Include="src\Features\Visuals\Chams\Chams.cpp" />
     <ClCompile Include="src\Features\Visuals\ESP\ESP.cpp" />
     <ClCompile Include="src\Features\Visuals\FakeAngle\FakeAngle.cpp" />
@@ -1241,6 +1242,7 @@
     <ClInclude Include="src\Features\Simulation\ProjectileSimulation\ProjectileSimulation.h" />
     <ClInclude Include="src\Features\Spectate\Spectate.h" />
     <ClInclude Include="src\Features\Ticks\Ticks.h" />
+    <ClInclude Include="src\Features\Ticks\WarpPred\WarpPrediction.h" />
     <ClInclude Include="src\Features\Visuals\Chams\Chams.h" />
     <ClInclude Include="src\Features\Visuals\ESP\ESP.h" />
     <ClInclude Include="src\Features\Visuals\FakeAngle\FakeAngle.h" />

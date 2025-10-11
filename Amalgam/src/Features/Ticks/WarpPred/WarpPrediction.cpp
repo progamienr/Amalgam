@@ -1,5 +1,5 @@
 #include "WarpPrediction.h"
-#include "../../Ticks/Backtrack/Backtrack.h"
+#include "../../../Features/Backtrack/Backtrack.h"
 
 // gods work by sean
 void CWarpPrediction::Initialize()
@@ -115,7 +115,7 @@ bool CWarpPrediction::PredictWarpPosition(int iIndex, Vec3& vPredictedPos, float
         return false;
     
     auto pEntity = I::ClientEntityList->GetClientEntity(iIndex);
-    if (!pEntity || !pEntity->IsPlayer())
+    if (!pEntity || pEntity->GetClientClass()->m_ClassID != (int)ETFClassID::CTFPlayer)
         return false;
     
     auto pPlayer = pEntity->As<CTFPlayer>();

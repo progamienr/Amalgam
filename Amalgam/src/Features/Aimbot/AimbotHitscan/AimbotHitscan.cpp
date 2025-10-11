@@ -3,6 +3,7 @@
 #include "../Aimbot.h"
 #include "../../Resolver/Resolver.h"
 #include "../../Ticks/Ticks.h"
+#include "../../Ticks/WarpPred/WarpPrediction.h"
 #include "../../Visuals/Visuals.h"
 #include "../../Simulation/MovementSimulation/MovementSimulation.h"
 
@@ -825,6 +826,26 @@ void CAimbotHitscan::Run(CTFPlayer* pLocal, CTFWeaponBase* pWeapon, CUserCmd* pC
 
 		G::AimTarget = { tTarget.m_pEntity->entindex(), I::GlobalVars->tickcount };
 		G::AimPoint = { tTarget.m_vPos, I::GlobalVars->tickcount };
+		// to ensure we aren't predicting when we dont need to
+		if (tTarget.m_iTargetType == TargetEnum::Player && F::WarpPrediction.IsWarping(tTarget.m_pEntity->entindex()) && H::Entities.GetLagCompensation(tTarget.m_pEntity->entindex())) 
+		{ 
+			Vec3 vPredictedPos; 
+			if (F::WarpPrediction.PredictWarpPosition(tTarget.m_pEntity->entindex(), vPredictedPos)) 
+			{ 
+				Vec3 vEyePos = pLocal->GetShootPos(); 
+				Vec3 vPredictedAngle = Math::CalcAngle(vEyePos, vPredictedPos); 
+
+				float flAlignment = F::WarpPrediction.GetAlignmentFactor(tTarget.m_pEntity->entindex(), vPredictedAngle); 
+
+				if (flAlignment > 0.7f) 
+				{ 
+					tTarget.m_vAngleTo = vPredictedAngle; 
+					tTarget.m_vPos = vPredictedPos; 
+
+					tTarget.m_bWarpPredicted = true; 
+				} 
+			} 
+		}
 
 		if (ShouldFire(pLocal, pWeapon, pCmd, tTarget))
 		{

@@ -22,6 +22,7 @@ struct Target_t
 
 	TickRecord* m_pRecord = nullptr;
 	bool m_bBacktrack = false;
+	bool m_bWarpPredicted = false; 
 };
 
 class CAimbotGlobal

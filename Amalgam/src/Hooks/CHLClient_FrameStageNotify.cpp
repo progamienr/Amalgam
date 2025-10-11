@@ -8,6 +8,7 @@
 #include "../Features/Players/PlayerUtils.h"
 #include "../Features/Simulation/MovementSimulation/MovementSimulation.h"
 #include "../Features/Spectate/Spectate.h"
+#include "../Features/Ticks/WarpPred/WarpPrediction.h"
 #include "../Features/Visuals/Visuals.h"
 #include "../Features/Visuals/ESP/ESP.h"
 #include "../Features/Visuals/Chams/Chams.h"
@@ -47,6 +48,7 @@ MAKE_HOOK(CHLClient_FrameStageNotify, U::Memory.GetVirtual(I::Client, 35), void,
 		F::MoveSim.Store();
 		F::CritHack.Store();
 		F::Aimbot.Store();
+		F::WarpPrediction.Update();
 
 		auto pLocal = H::Entities.GetLocal();
 		F::Groups.Store(pLocal);

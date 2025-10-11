@@ -10,6 +10,7 @@
 #include "../Features/PacketManip/PacketManip.h"
 #include "../Features/Resolver/Resolver.h"
 #include "../Features/Ticks/Ticks.h"
+#include "../Features/Ticks/WarpPred/WarpPrediction.h" 
 #include "../Features/Visuals/Visuals.h"
 #include "../Features/Visuals/FakeAngle/FakeAngle.h"
 #include "../Features/Spectate/Spectate.h"

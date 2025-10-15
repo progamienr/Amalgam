@@ -31,7 +31,6 @@ struct MoveData
 	float m_flSimTime = 0.f;
 	int m_iMode = 0;
 	Vec3 m_vVelocity = {};
-	Vec3 m_vAcceleration = {};
 	Vec3 m_vOrigin = {};
 };
 

@@ -7,9 +7,9 @@
 [![Workflow status](https://img.shields.io/github/actions/workflow/status/progamienr/Amalgam/msbuild.yml?branch=master&style=for-the-badge)](/../../actions)
 [![Commit activity](https://img.shields.io/github/commit-activity/m/progamienr/Amalgam?style=for-the-badge)](/../../commits/)
 
-<p>A dope splashbot from Northern, Backtrack to crosshair like a boss, Extreme Arc Angles like a BOSS, and some movesim shenanigans</p>
+<p>I'd consider this as a decent fork, but there are too many issues and bugs that i'd just advise to use the main repo of Amalgam instead of this and copy n' paste splashbot and whatever feature you'd like.</p>
 <p>
-<strong>Note:</strong> To shoot more extreme angles with arc trajectory, increase stim (Simulation Time)<code>10s</code>.
+<strong>Note:</strong> To shoot more extreme angles with arc trajectory, increase stim (Simulation Time)<code>I preferably use 10</code>.
 </p>
 
 </div>
